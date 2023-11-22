@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "oig.domain", "oig.domain\oig.domain.csproj", "{FC8AC4DF-7202-4F2A-BE19-1CBB8DBE67F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "oig.domain", "oig.domain\oig.domain.csproj", "{FC8AC4DF-7202-4F2A-BE19-1CBB8DBE67F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "oig.pdf", "oig.pdf\oig.pdf.csproj", "{E247451A-0F0A-4E1E-86EB-39FED2E30819}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "oig.pdf", "oig.pdf\oig.pdf.csproj", "{E247451A-0F0A-4E1E-86EB-39FED2E30819}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "oig.domain.faker", "oig.domain.faker\oig.domain.faker.csproj", "{0152B94B-3082-4BA6-8603-E26E4422A881}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{E247451A-0F0A-4E1E-86EB-39FED2E30819}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E247451A-0F0A-4E1E-86EB-39FED2E30819}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E247451A-0F0A-4E1E-86EB-39FED2E30819}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0152B94B-3082-4BA6-8603-E26E4422A881}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0152B94B-3082-4BA6-8603-E26E4422A881}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0152B94B-3082-4BA6-8603-E26E4422A881}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0152B94B-3082-4BA6-8603-E26E4422A881}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

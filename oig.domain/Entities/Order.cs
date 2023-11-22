@@ -4,7 +4,7 @@
     { 
         public required ISet<LineItem<T>> LineItems { get; set; }
 
-        public decimal OrderTotal
+        public decimal SubTotal
         {
             get
             {
@@ -60,15 +60,15 @@
         {
             get
             {
-                return OrderTotal * DiscountRate;
+                return SubTotal * DiscountRate;
             }
         }
 
-        public decimal AfterDiscountPrice
+        public decimal AfterDiscount
         {
             get
             {
-                return OrderTotal - DiscountableAmount;
+                return SubTotal - DiscountableAmount;
             }
         }
 
@@ -76,30 +76,32 @@
         {
             get
             {
-                return AfterDiscountPrice * TaxRate;
+                return AfterDiscount * TaxRate;
             }
         }
 
-        public decimal AfterTaxPrice
+        public decimal AfterTax
         {
             get
             {
-                return AfterDiscountPrice + TaxableAmount;
+                return AfterDiscount + TaxableAmount;
             }
         }
 
-        public decimal GrandTotalPrice
+        public decimal GrandTotal
         {
             get
             {
-                return AfterTaxPrice;
+                return AfterTax;
             }
         }
 
-        public required Customer OrderedBy { get; set; }
+        public required Customer<T> OrderedBy { get; set; }
 
         public DateTimeOffset OrderedDateTimeUTCOffset { get; } = DateTimeOffset.UtcNow.UtcDateTime;
 
         public required string BillTo { get; set; }
+
+        public string? Comments { get; set; }
     }
 }

@@ -32,10 +32,8 @@
         {
             get
             {
-                return Order.GrandTotalPrice;
+                return Order.GrandTotal;
             }
         }
-
-        public required string Description { get; set; }
     }
 }
