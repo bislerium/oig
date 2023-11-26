@@ -14,4 +14,8 @@
     <ProjectReference Include="..\oig.domain\oig.domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="src\" />
+  </ItemGroup>
+
 </Project>

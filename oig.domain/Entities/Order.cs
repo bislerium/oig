@@ -96,6 +96,8 @@
             }
         }
 
+        public required Company<T> OrderFullfilledBy { get; set; }
+
         public required Customer<T> OrderedBy { get; set; }
 
         public DateTimeOffset OrderedDateTimeUTCOffset { get; } = DateTimeOffset.UtcNow.UtcDateTime;

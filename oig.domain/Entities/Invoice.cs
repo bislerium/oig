@@ -2,8 +2,6 @@
 {
     public class Invoice<T>: Entity<T>
     {
-        public required Company<T> Company { get; set; }
-
         public required Order<T> Order { get; set; }
 
         public required int InvoiceNumber { get; set; }

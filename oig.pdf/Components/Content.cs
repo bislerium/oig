@@ -19,6 +19,13 @@ namespace oig.pdf.Components
             {
                 column.Spacing(5);
 
+                column.Item().Row(row =>
+                {
+                    row.RelativeItem().Component(new Address<Company<int>>("From", _order.OrderFullfilledBy));
+                    row.ConstantItem(50);
+                    row.RelativeItem().Component(new Address<Customer<int>>("For", _order.OrderedBy));
+                });
+
                 column.Item().Component(new Table(_order.LineItems));
 
                 column.Item().Component(new AppliedPrice(_order));

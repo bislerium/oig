@@ -1,9 +1,6 @@
 ﻿namespace oig.domain.Entities
 {
-    public class Customer<T>: Entity<T>
+    public class Customer<T>: Identity<T>
     {
-        public required string Name { get; set; }
-
-        public required string Email { get; set; }
     }
 }
