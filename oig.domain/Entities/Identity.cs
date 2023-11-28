@@ -1,6 +1,6 @@
 ﻿namespace oig.domain.Entities
 {
-    public abstract class Identity<T> : Entity<T>
+    public abstract class Identity : Entity<string>
     {
         public required string Name { get; set; }
 

@@ -6,9 +6,9 @@ namespace oig.pdf.Components
 {
     internal class Content : IComponent
     {
-        private readonly Order<int> _order;
+        private readonly Order _order;
 
-        public Content(Order<int> order)
+        public Content(Order order)
         {
             _order = order;
         }
@@ -21,9 +21,9 @@ namespace oig.pdf.Components
 
                 column.Item().Row(row =>
                 {
-                    row.RelativeItem().Component(new Address<Company<int>>("From", _order.OrderFullfilledBy));
+                    row.RelativeItem().Component(new Address<Company>("From", _order.OrderedFrom));
                     row.ConstantItem(50);
-                    row.RelativeItem().Component(new Address<Customer<int>>("For", _order.OrderedBy));
+                    row.RelativeItem().Component(new Address<Customer>("For", _order.OrderedBy));
                 });
 
                 column.Item().Component(new Table(_order.LineItems));

@@ -7,9 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "oig.domain", "oig.domain\oi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "oig.pdf", "oig.pdf\oig.pdf.csproj", "{E247451A-0F0A-4E1E-86EB-39FED2E30819}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "oig.domain.faker", "oig.domain.faker\oig.domain.faker.csproj", "{0152B94B-3082-4BA6-8603-E26E4422A881}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "oig.main", "oig.main\oig.main.csproj", "{524279FB-D5BB-4F50-AFE1-CBA372556C2A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{220B487D-2755-4785-B350-E5494D24D8D0} = {220B487D-2755-4785-B350-E5494D24D8D0}
+		{FC8AC4DF-7202-4F2A-BE19-1CBB8DBE67F1} = {FC8AC4DF-7202-4F2A-BE19-1CBB8DBE67F1}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "oig.main", "oig.main\oig.main.csproj", "{524279FB-D5BB-4F50-AFE1-CBA372556C2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "oig.domain.source.faker", "oig.domain.source.faker\oig.domain.source.faker.csproj", "{220B487D-2755-4785-B350-E5494D24D8D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +29,14 @@ Global
 		{E247451A-0F0A-4E1E-86EB-39FED2E30819}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E247451A-0F0A-4E1E-86EB-39FED2E30819}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E247451A-0F0A-4E1E-86EB-39FED2E30819}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0152B94B-3082-4BA6-8603-E26E4422A881}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0152B94B-3082-4BA6-8603-E26E4422A881}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0152B94B-3082-4BA6-8603-E26E4422A881}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0152B94B-3082-4BA6-8603-E26E4422A881}.Release|Any CPU.Build.0 = Release|Any CPU
 		{524279FB-D5BB-4F50-AFE1-CBA372556C2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{524279FB-D5BB-4F50-AFE1-CBA372556C2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{524279FB-D5BB-4F50-AFE1-CBA372556C2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{524279FB-D5BB-4F50-AFE1-CBA372556C2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{220B487D-2755-4785-B350-E5494D24D8D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{220B487D-2755-4785-B350-E5494D24D8D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{220B487D-2755-4785-B350-E5494D24D8D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{220B487D-2755-4785-B350-E5494D24D8D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

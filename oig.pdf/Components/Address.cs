@@ -5,7 +5,7 @@ using QuestPDF.Infrastructure;
 
 namespace oig.pdf.Components
 {
-    internal class Address<T> : IComponent where T : Identity<int>
+    internal class Address<T> : IComponent where T : Identity
     {
         private readonly string _title;
         private readonly T _identity;

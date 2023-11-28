@@ -1,8 +1,10 @@
 ﻿namespace oig.domain.Entities
 {
-    public class Invoice<T>: Entity<T>
+
+    [ToString]
+    public class Invoice: Entity<string>
     {
-        public required Order<T> Order { get; set; }
+        public required Order Order { get; set; }
 
         public required int InvoiceNumber { get; set; }
 
@@ -10,7 +12,7 @@
 
         public DateTimeOffset InvoiceDueDateTimeUTCOffset { get; set; } = DateTimeOffset.UtcNow.UtcDateTime.AddDays(30);
 
-        public T PONumber
+        public string PONumber
         {
             get
             {

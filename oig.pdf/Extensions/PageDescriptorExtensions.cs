@@ -11,7 +11,7 @@ namespace oig.pdf.Extensions
             page.Header().Component(new Header());
         }
 
-        public static void AddContent(this PageDescriptor page, Order<int> order)
+        public static void AddContent(this PageDescriptor page, Order order)
         {
             page.Header().Component(new Content(order));
         }

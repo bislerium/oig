@@ -1,6 +1,7 @@
 ﻿namespace oig.domain.Entities
 {
-    public class Customer<T>: Identity<T>
+    [ToString]
+    public class Customer: Identity
     {
     }
 }

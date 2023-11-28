@@ -1,8 +1,11 @@
-﻿namespace oig.domain.Entities
+﻿using oig.domain.Constants;
+
+namespace oig.domain.Entities
 {
-    public class Order<T>: Entity<T>
+    [ToString]
+    public class Order: Entity<string>
     { 
-        public required ISet<LineItem<T>> LineItems { get; set; }
+        public required ISet<LineItem> LineItems { get; set; }
 
         public decimal SubTotal
         {
@@ -23,13 +26,13 @@
 
             set
             {
-                if (value >= 0)
+                if (value is >= RateRules.MIN_TAX_RATE and <= RateRules.MAX_TAX_RATE)
                 {
                     _taxRate = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(nameof(TaxRate), "Taxrate must be greater or equal to 0!");
+                    throw new ArgumentOutOfRangeException(nameof(TaxRate), $"Tax rate must be exclusively between {RateRules.MIN_TAX_RATE} and {RateRules.MAX_TAX_RATE}!");
                 }
             }
         }
@@ -45,13 +48,13 @@
 
             set
             {
-                if (value >= 5 && value <= 80)
+                if (value is >= RateRules.MIN_DISCOUNT_RATE and <= RateRules.MAX_DISCOUNT_RATE)
                 {
                     _discountRate = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(nameof(DiscountRate), "Discountrate must be between 5 and 80 exclusively!");
+                    throw new ArgumentOutOfRangeException(nameof(DiscountRate), $"Discount rate must be exclusively between {RateRules.MIN_DISCOUNT_RATE} and {RateRules.MAX_DISCOUNT_RATE}!");
                 }
             }
         }
@@ -96,13 +99,11 @@
             }
         }
 
-        public required Company<T> OrderFullfilledBy { get; set; }
+        public required Customer OrderedBy { get; set; }
 
-        public required Customer<T> OrderedBy { get; set; }
+        public required Company OrderedFrom { get; set; }
 
         public DateTimeOffset OrderedDateTimeUTCOffset { get; } = DateTimeOffset.UtcNow.UtcDateTime;
-
-        public required string BillTo { get; set; }
 
         public string? Comments { get; set; }
     }

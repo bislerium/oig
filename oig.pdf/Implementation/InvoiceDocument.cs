@@ -7,9 +7,9 @@ namespace oig.pdf.Implementation
 {
     public class InvoiceDocument : IDocument
     {
-        public Invoice<int> _invoice;
+        public Invoice _invoice;
 
-        public InvoiceDocument(Invoice<int> invoice)
+        public InvoiceDocument(Invoice invoice)
         {
            _invoice = invoice;
         }

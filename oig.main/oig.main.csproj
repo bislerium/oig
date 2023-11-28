@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\oig.domain.source.faker\oig.domain.source.faker.csproj" />
+    <ProjectReference Include="..\oig.domain\oig.domain.csproj" />
     <ProjectReference Include="..\oig.pdf\oig.pdf.csproj" />
   </ItemGroup>
 

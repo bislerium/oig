@@ -1,6 +1,7 @@
 ﻿namespace oig.domain.Entities
 {
-    public class Product<T>: Entity<T>
+    [ToString]
+    public class Product: Entity<string>
     {
         public required string Name { get; set; }
 

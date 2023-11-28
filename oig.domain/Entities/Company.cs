@@ -1,6 +1,7 @@
 ﻿namespace oig.domain.Entities
 {
-    public class Company<T>: Identity<T>
+    [ToString]
+    public class Company: Identity
     {
         public required string Slogan { get; set; }
 

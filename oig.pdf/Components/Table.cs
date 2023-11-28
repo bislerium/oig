@@ -7,9 +7,9 @@ namespace oig.pdf.Components
 {
     internal class Table : IComponent
     {
-        private readonly ISet<LineItem<int>> _lineItems;
+        private readonly ISet<LineItem> _lineItems;
 
-        public Table(ISet<LineItem<int>> lineItems)
+        public Table(ISet<LineItem> lineItems)
         {
             _lineItems = lineItems;
         }

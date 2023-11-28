@@ -7,17 +7,17 @@ namespace oig.domain.Shared
     {
         public const string TIMEZONE_ID = "NST"; // Default TimeZone ID: Nepal Standard Time
 
-        public static DateTimeOffset GetLocalInvoiceDateTimeUTCOffset<T>(this Invoice<T> invoice, string timeZoneID = TIMEZONE_ID)
+        public static DateTimeOffset GetLocalInvoiceDateTimeUTCOffset(this Invoice invoice, string timeZoneID = TIMEZONE_ID)
         {
             return GetLocalDateTime(invoice.InvoiceDateTimeUTCOffset, timeZoneID);
         }
 
-        public static DateTimeOffset GetLocalInvoiceDueDateTimeUTCOffset<T>(this Invoice<T> invoice, string timeZoneID = TIMEZONE_ID)
+        public static DateTimeOffset GetLocalInvoiceDueDateTimeUTCOffset(this Invoice invoice, string timeZoneID = TIMEZONE_ID)
         {
             return GetLocalDateTime(invoice.InvoiceDueDateTimeUTCOffset, timeZoneID);
         }
 
-        public static DateTimeOffset GetLocalOrderdDateTimeUTCOffset<T>(this Order<T> order, string timeZoneID = TIMEZONE_ID)
+        public static DateTimeOffset GetLocalOrderdDateTimeUTCOffset(this Order order, string timeZoneID = TIMEZONE_ID)
         {
             return GetLocalDateTime(order.OrderedDateTimeUTCOffset, timeZoneID);
         }

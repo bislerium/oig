@@ -6,9 +6,9 @@ namespace oig.pdf.Components
 {
     internal class AppliedPrice : IComponent
     {
-        private readonly Order<int> _order;
+        private readonly Order _order;
 
-        public AppliedPrice(Order<int> order)
+        public AppliedPrice(Order order)
         {
             _order = order;
         }
