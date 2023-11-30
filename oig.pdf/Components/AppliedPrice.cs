@@ -1,5 +1,6 @@
 ﻿using oig.domain.Entities;
 using oig.pdf.Extensions;
+using QuestPDF.Fluent;
 using QuestPDF.Infrastructure;
 
 namespace oig.pdf.Components
@@ -15,10 +16,16 @@ namespace oig.pdf.Components
 
         public void Compose(IContainer container)
         {
-            container.AddSubTotal(_order.SubTotal);
-            container.AddDiscount(_order.DiscountRate, _order.DiscountableAmount);
-            container.AddTax(_order.TaxRate, _order.TaxableAmount);
-            container.AddGrandTotal(_order.GrandTotal);
+            container.Column(column =>
+            {
+                column.Spacing(2);
+                //column.Item().BorderBottom(1).PaddingBottom(5).Text(_title).SemiBold();
+                column.Item().AddSubTotal(_order.SubTotal);
+                column.Item().AddDiscount(_order.DiscountRate, _order.DiscountableAmount);
+                column.Item().AddTax(_order.TaxRate, _order.TaxableAmount);
+                column.Item().AddGrandTotal(_order.GrandTotal);
+            });
+
         }
     }
 }

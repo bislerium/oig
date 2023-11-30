@@ -19,18 +19,18 @@ namespace oig.pdf.Components
             {
                 column.Spacing(5);
 
-                column.Item().Row(row =>
+/*                column.Item().Row(row =>
                 {
                     row.RelativeItem().Component(new Address<Company>("From", _order.OrderedFrom));
                     row.ConstantItem(50);
                     row.RelativeItem().Component(new Address<Customer>("For", _order.OrderedBy));
-                });
+                });*/
 
-                column.Item().Component(new Table(_order.LineItems));
+                //column.Item().Dynamic(new Table(_order.LineItems));
 
-                column.Item().Component(new AppliedPrice(_order));
+                // column.Item().Component(new AppliedPrice(_order));
 
-                if (!string.IsNullOrWhiteSpace(_order.Comments))
+                // if (!string.IsNullOrWhiteSpace(_order.Comments))
                     column.Item().PaddingTop(25).Component(new Comments(_order.Comments));
             });
         }

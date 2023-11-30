@@ -8,24 +8,20 @@ namespace oig.domain.source.faker.Entities
     {
         private static readonly Faker<Order> _orderFaker;
 
-        public static Customer OrderedBy { get; set; }
-        public static Company OrderedFrom { get; set; }
-        public static ISet<LineItem> LineItems { get; set; }
+        public static int LineItemCount { get; set; }
 
         static OrderFaker()
         {
-            OrderedBy = CustomerFaker.Generate();
-            OrderedFrom = CompanyFaker.Generate();
-            LineItems = new HashSet<LineItem>(LineItemFaker.GenerateMany());
+            LineItemCount = 20;
 
             _orderFaker = new Faker<Order>(Config.Locale)
-                .RuleFor(x => x.Id, y => y.Random.AlphaNumeric(10))
+                .RuleFor(x => x.Id, y => y.Random.AlphaNumeric(10).ToUpper())
                 .RuleFor(x => x.TaxRate, y => y.Random.Int(RateRules.MIN_TAX_RATE, RateRules.MAX_TAX_RATE))
                 .RuleFor(x => x.DiscountRate, y => y.Random.Int(RateRules.MIN_DISCOUNT_RATE, RateRules.MAX_DISCOUNT_RATE))
-                .RuleFor(x => x.OrderedBy, y => OrderedBy)
-                .RuleFor(x => x.OrderedFrom, y => OrderedFrom)
-                .RuleFor(x => x.Comments, y => y.Lorem.Sentences(3))
-                .RuleFor(x => x.LineItems, y => LineItems)
+                .RuleFor(x => x.OrderedBy, y => CustomerFaker.Generate())
+                .RuleFor(x => x.OrderedFrom, y => CompanyFaker.Generate())
+                .RuleFor(x => x.Comments, y => y.Lorem.Sentences(14, " "))
+                .RuleFor(x => x.LineItems, y => new HashSet<LineItem>(LineItemFaker.GenerateMany(LineItemCount)))
                 .FinishWith((x, y) => x.ToString())
                 .UseSeed(Config.OrderFakerSeedValue);
         }
@@ -34,8 +30,12 @@ namespace oig.domain.source.faker.Entities
         {
             return _orderFaker.Generate();
         }
+        public static IEnumerable<Order> GenerateMany(int count = 20)
+        {
+            return _orderFaker.Generate(count);
+        }
 
-        public static IEnumerable<Order> GenerateMany(int min = 5, int max = 100)
+        public static IEnumerable<Order> GenerateBetween(int min = 5, int max = 100)
         {
             return _orderFaker.GenerateBetween(min, max);
         }

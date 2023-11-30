@@ -10,7 +10,7 @@ namespace oig.domain.source.faker.Entities
         static CompanyFaker()
         {
             _companyFaker = new Faker<Company>(Config.Locale)
-                .RuleFor(x => x.Id, y => y.Random.AlphaNumeric(10))
+                .RuleFor(x => x.Id, y => y.Random.AlphaNumeric(10).ToUpper())
                 .RuleFor(x => x.Id, y => y.Random.AlphaNumeric(10))
                 .RuleFor(x => x.Name, y => y.Company.CompanyName())
                 .RuleFor(x => x.Address, y => y.Address.FullAddress())
@@ -25,6 +25,11 @@ namespace oig.domain.source.faker.Entities
         public static Company Generate()
         {
             return _companyFaker.Generate();
+        }
+
+        public static IEnumerable<Company> GenerateMany(int count = 20)
+        {
+            return _companyFaker.Generate(count);
         }
 
         public static IEnumerable<Company> GenerateMany(int min = 5, int max = 50)

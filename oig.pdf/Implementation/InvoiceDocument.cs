@@ -1,6 +1,8 @@
 ﻿using oig.domain.Entities;
+using oig.pdf.Components;
 using oig.pdf.Extensions;
 using QuestPDF.Fluent;
+using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 
 namespace oig.pdf.Implementation
@@ -21,15 +23,19 @@ namespace oig.pdf.Implementation
 
         public void Compose(IDocumentContainer container)
         {
+
             container
             .Page(page =>
             {
-                page.Margin(50);
+                page.Size(PageSizes.A6);
+                page.Margin(1, Unit.Centimetre);
+                page.DefaultTextStyle(x => x.FontSize(6));
 
-                page.AddHeader();
-                page.AddContent(_invoice.Order);
+                //page.AddHeader();
+                //page.AddContent(_invoice.Order);
 
-                page.AddFooter();
+                page.Content().Component(new Table(_invoice.Order.LineItems));
+                //page.AddFooter();
             });
         }
     }
