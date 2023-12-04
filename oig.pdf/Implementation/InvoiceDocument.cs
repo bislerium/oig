@@ -31,11 +31,11 @@ namespace oig.pdf.Implementation
                 page.Margin(1, Unit.Centimetre);
                 page.DefaultTextStyle(x => x.FontSize(6));
 
-                //page.AddHeader();
-                //page.AddContent(_invoice.Order);
+                page.AddHeader(_invoice);
+                page.AddContent(_invoice.Order);
 
-                page.Content().Component(new Table(_invoice.Order.LineItems));
-                //page.AddFooter();
+                //page.Content().Component(new Table(_invoice.Order.LineItems));
+                page.AddFooter();
             });
         }
     }

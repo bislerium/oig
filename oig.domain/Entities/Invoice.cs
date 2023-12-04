@@ -8,7 +8,7 @@
 
         public required int InvoiceNumber { get; set; }
 
-        public DateTimeOffset InvoiceDateTimeUTCOffset { get; } = DateTimeOffset.UtcNow.UtcDateTime;
+        public DateTimeOffset InvoiceIssueDateTimeUTCOffset { get; } = DateTimeOffset.UtcNow.UtcDateTime;
 
         public DateTimeOffset InvoiceDueDateTimeUTCOffset { get; set; } = DateTimeOffset.UtcNow.UtcDateTime.AddDays(30);
 

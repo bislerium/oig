@@ -5,6 +5,7 @@ namespace oig.pdf.Extensions
 {
     internal static class ContainerExtensions
     {
+
         internal static void AddSubTotal(this IContainer container, decimal subTotal)
         {
             container.AlignRight().Text($"SUBTOTAL: {subTotal}$").FontSize(14);

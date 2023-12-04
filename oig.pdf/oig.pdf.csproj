@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="QuestPDF" Version="2023.10.2" />
+    <PackageReference Include="Svg.Skia" Version="1.0.0.6" />
   </ItemGroup>
 
   <ItemGroup>
