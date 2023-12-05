@@ -2,7 +2,7 @@
 {
 
     [ToString]
-    public class Invoice: Entity<string>
+    public class Invoice : Entity<string>
     {
         public required Order Order { get; set; }
 

@@ -4,11 +4,11 @@ using QuestPDF.Infrastructure;
 
 namespace oig.pdf.Components
 {
-    internal class Comments : IComponent
+    internal class Notes : IComponent
     {
         private readonly string _components;
 
-        public Comments(string components)
+        public Notes(string components)
         {
             _components = components;
         }
@@ -18,7 +18,7 @@ namespace oig.pdf.Components
             container.Background(Colors.Grey.Lighten3).Padding(10).Column(column =>
             {
                 column.Spacing(5);
-                column.Item().Text("Comments").FontSize(14);
+                column.Item().Text("Notes").Bold();
                 column.Item().Text(_components);
             });
         }

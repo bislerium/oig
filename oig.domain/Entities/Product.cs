@@ -3,7 +3,7 @@
 namespace oig.domain.Entities
 {
     [ToString]
-    public class Product: Entity<string>
+    public class Product : Entity<string>
     {
         public required string Name { get; set; }
 

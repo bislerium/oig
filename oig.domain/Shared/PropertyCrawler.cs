@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using oig.domain.Attributes;
+using System.Reflection;
 
 namespace oig.domain.Shared
 {
@@ -10,6 +11,8 @@ namespace oig.domain.Shared
 
             foreach (PropertyInfo property in properties)
             {
+                if (Attribute.IsDefined(property, typeof(SkipPropertyAttribute)))
+                    continue;
                 yield return (property.Name, property.PropertyType, property.GetValue(instance));
             }
         }

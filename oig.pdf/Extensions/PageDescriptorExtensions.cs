@@ -13,14 +13,14 @@ namespace oig.pdf.Extensions
 
         public static void AddContent(this PageDescriptor page, Order order)
         {
-            page.Content().PaddingVertical(15).Column(column =>
+            page.Content().PaddingVertical(20).Column(column =>
             {
                 column.Spacing(5);
 
                 column.Item().Row(row =>
                 {
                     row.RelativeItem().Component(new Address<Company>("From", order.OrderedFrom));
-                    row.ConstantItem(50);
+                    row.ConstantItem(15);
                     row.RelativeItem().Component(new Address<Customer>("For", order.OrderedBy));
                 });
 
@@ -30,7 +30,7 @@ namespace oig.pdf.Extensions
                 column.Item().Component(new AppliedPrice(order));
 
                 if (!string.IsNullOrWhiteSpace(order.Comments))
-                    column.Item().PaddingTop(25).Component(new Comments(order.Comments));
+                    column.Item().PaddingTop(10).Component(new Notes(order.Comments));
             });
         }
 

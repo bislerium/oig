@@ -16,15 +16,19 @@ namespace oig.pdf.Components
 
         public void Compose(IContainer container)
         {
-            container.Column(column =>
+            container.PaddingLeft(120).Table(table =>
             {
-                column.Spacing(2);
-                column.Item().AddSubTotal(_order.SubTotal);
-                column.Item().AddDiscount(_order.DiscountRate, _order.DiscountableAmount);
-                column.Item().AddTax(_order.TaxRate, _order.TaxableAmount);
-                column.Item().AddGrandTotal(_order.GrandTotal);
-            });
+                table.ColumnsDefinition(columns =>
+                {
+                    columns.RelativeColumn();
+                    columns.RelativeColumn();
+                });
 
+                table.AddSubTotalRow(_order.SubTotal);
+                table.AddDiscountRow(_order.DiscountRate, _order.DiscountableAmount);
+                table.AddTaxRow(_order.TaxRate, _order.TaxableAmount);
+                table.AddGrandTotalRow(_order.GrandTotal);
+            });
         }
     }
 }

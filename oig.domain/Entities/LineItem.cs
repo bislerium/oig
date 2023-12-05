@@ -1,7 +1,7 @@
 ﻿namespace oig.domain.Entities
 {
     [ToString]
-    public class LineItem: Entity<string>
+    public class LineItem : Entity<string>
     {
         public required Product Product { get; set; }
 

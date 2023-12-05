@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 QuestPDF.Settings.License = LicenseType.Community;
 
-OrderFaker.LineItemCount = 20;
+OrderFaker.LineItemCount = 6;
 
 var invoice = InvoiceFaker.Generate();
 

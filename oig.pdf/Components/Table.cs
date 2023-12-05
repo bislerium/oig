@@ -1,5 +1,4 @@
 ﻿using oig.domain.Entities;
-using QuestPDF.Elements;
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
@@ -194,4 +193,4 @@ namespace oig.pdf.Components
         }
     }
 
-    }
+}

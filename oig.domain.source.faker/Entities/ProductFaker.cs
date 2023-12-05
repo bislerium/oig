@@ -8,8 +8,8 @@ namespace oig.domain.source.faker.Entities
     {
         private static readonly Faker<Product> _productFaker;
 
-        public static int MinPrice {  get; set; }
-        public static int MaxPrice {  get; set; }
+        public static int MinPrice { get; set; }
+        public static int MaxPrice { get; set; }
 
         static ProductFaker()
         {

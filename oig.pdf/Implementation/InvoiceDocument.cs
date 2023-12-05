@@ -1,5 +1,4 @@
 ﻿using oig.domain.Entities;
-using oig.pdf.Components;
 using oig.pdf.Extensions;
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
@@ -13,7 +12,7 @@ namespace oig.pdf.Implementation
 
         public InvoiceDocument(Invoice invoice)
         {
-           _invoice = invoice;
+            _invoice = invoice;
         }
 
         public DocumentMetadata GetMetadata() => DocumentMetadata.Default;
@@ -35,6 +34,11 @@ namespace oig.pdf.Implementation
                 page.AddContent(_invoice.Order);
                 page.AddFooter();
             });
+        }
+
+        ~InvoiceDocument()
+        {
+            SvgExtensions.SKSvg.Dispose();
         }
     }
 }

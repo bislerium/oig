@@ -25,7 +25,7 @@ namespace oig.pdf.Components
                 column.Item().BorderBottom(1).PaddingBottom(5).Text(_title).SemiBold();
 
                 foreach (var (_, _, PropertyValue) in PropertyCrawler.ListPropertiesInfo(_identity))
-                {                   
+                {
                     if (PropertyValue is not null)
                     {
                         column.Item().Text(PropertyValue.ToString());

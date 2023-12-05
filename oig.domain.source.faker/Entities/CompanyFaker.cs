@@ -17,7 +17,7 @@ namespace oig.domain.source.faker.Entities
                 .RuleFor(x => x.Email, (y, z) => y.Internet.Email(z.Name))
                 .RuleFor(x => x.Phone, y => y.Phone.PhoneNumber())
                 .RuleFor(x => x.Slogan, y => y.Company.CatchPhrase())
-                .RuleFor(x => x.Website, y => y.Internet.DomainName())                
+                .RuleFor(x => x.Website, y => y.Internet.DomainName())
                 .FinishWith((x, y) => x.ToString())
                 .UseSeed(Config.CompanyFakerSeedValue);
         }

@@ -3,8 +3,8 @@
 namespace oig.domain.Entities
 {
     [ToString]
-    public class Order: Entity<string>
-    { 
+    public class Order : Entity<string>
+    {
         public required ISet<LineItem> LineItems { get; set; }
 
         public decimal SubTotal
@@ -63,7 +63,7 @@ namespace oig.domain.Entities
         {
             get
             {
-                return SubTotal * (DiscountRate/100m);
+                return SubTotal * (DiscountRate / 100m);
             }
         }
 
@@ -79,7 +79,7 @@ namespace oig.domain.Entities
         {
             get
             {
-                return AfterDiscount * (TaxRate/100m);
+                return AfterDiscount * (TaxRate / 100m);
             }
         }
 

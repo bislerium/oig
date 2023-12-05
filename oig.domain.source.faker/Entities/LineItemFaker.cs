@@ -14,7 +14,7 @@ namespace oig.domain.source.faker.Entities
             MinQuantity = 1;
             MaxQuantity = 100;
 
-            _lineItemFaker = new Faker<LineItem>(Config.Locale)         
+            _lineItemFaker = new Faker<LineItem>(Config.Locale)
                 .RuleFor(x => x.Product, y => ProductFaker.Generate())
                 .RuleFor(x => x.Id, y => y.Random.AlphaNumeric(10).ToUpper())
                 .RuleFor(x => x.Quantity, y => y.Random.Int(MinQuantity, MaxQuantity))
