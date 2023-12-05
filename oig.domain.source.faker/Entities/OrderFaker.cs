@@ -12,7 +12,7 @@ namespace oig.domain.source.faker.Entities
 
         static OrderFaker()
         {
-            LineItemCount = 20;
+            LineItemCount = 10;
 
             _orderFaker = new Faker<Order>(Config.Locale)
                 .RuleFor(x => x.Id, y => y.Random.AlphaNumeric(10).ToUpper())

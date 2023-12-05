@@ -8,21 +8,33 @@ namespace oig.pdf.Extensions
 
         internal static void AddSubTotal(this IContainer container, decimal subTotal)
         {
-            container.AlignRight().Text($"SUBTOTAL: {subTotal}$").FontSize(14);
+            container.AlignRight().Text($"SUBTOTAL: ${subTotal}");
         }
         internal static void AddDiscount(this IContainer container, int discountRate, decimal discountPrice)
         {
-            container.AlignRight().Text($"DISCOUNT -{discountRate}%: -{discountPrice}$").FontSize(14);
+            container.AlignRight().Text($"DISCOUNT -{discountRate}%: -${Truncate(discountPrice, 2)}$");
         }
 
         internal static void AddTax(this IContainer container, int taxRate, decimal taxPrice)
         {
-            container.AlignRight().Text($"TAX {taxRate}%: -{taxPrice}$").FontSize(14);
+            container.AlignRight().Text($"TAX {taxRate}%: +${Truncate(taxPrice, 2)}");
         }
 
         internal static void AddGrandTotal(this IContainer container, decimal grandTotal)
         {
-            container.AlignRight().Text($"GRAND TOTAL: {grandTotal}$").FontSize(14);
+            container
+                .AlignRight()
+                .Text(text =>
+                {
+                    text.Span("GRAND TOTAL: ");
+                    text.Span($"${Math.Round(grandTotal, MidpointRounding.AwayFromZero)}").Bold();
+                });            
+        }
+
+        private static decimal Truncate(decimal value, int places)
+        {
+            int _ = (int) Math.Pow(10, places);
+            return Math.Truncate(value * _) / _;
         }
     }
 }

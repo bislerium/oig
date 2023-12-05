@@ -63,7 +63,7 @@ namespace oig.domain.Entities
         {
             get
             {
-                return SubTotal * DiscountRate;
+                return SubTotal * (DiscountRate/100m);
             }
         }
 
@@ -79,7 +79,7 @@ namespace oig.domain.Entities
         {
             get
             {
-                return AfterDiscount * TaxRate;
+                return AfterDiscount * (TaxRate/100m);
             }
         }
 

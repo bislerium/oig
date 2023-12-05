@@ -13,7 +13,7 @@ namespace oig.pdf.Components
 
         public void Compose(IContainer container)
         {
-            container
+            
         }
     }
 }

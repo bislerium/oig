@@ -1,8 +1,12 @@
-﻿namespace oig.domain.source.faker
+﻿using Bogus;
+
+namespace oig.domain.source.faker
 {
     public static class Config
     {        
         public static string Locale { get; set; }
+        
+        public static string CurrencySymbol { get; set; }
 
         public static int CompanyFakerSeedValue { get; set; }
         public static int CustomerFakerSeedValue { get; set; }
@@ -14,6 +18,7 @@
         static Config() 
         {
             Locale = "ne";
+            CurrencySymbol = "$";
             CompanyFakerSeedValue = 1312;
             CustomerFakerSeedValue = 3223;
             InvoiceFakerSeedValue = 6121;

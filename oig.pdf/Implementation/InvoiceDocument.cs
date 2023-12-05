@@ -33,8 +33,6 @@ namespace oig.pdf.Implementation
 
                 page.AddHeader(_invoice);
                 page.AddContent(_invoice.Order);
-
-                //page.Content().Component(new Table(_invoice.Order.LineItems));
                 page.AddFooter();
             });
         }

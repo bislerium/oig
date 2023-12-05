@@ -13,7 +13,7 @@ namespace oig.pdf.Extensions
 
         public static void AddContent(this PageDescriptor page, Order order)
         {
-            page.Content().PaddingVertical(40).Column(column =>
+            page.Content().PaddingVertical(15).Column(column =>
             {
                 column.Spacing(5);
 

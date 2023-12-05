@@ -14,4 +14,13 @@
     <PackageReference Include="ToString.Fody" Version="1.11.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Images\logo.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\nuget.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

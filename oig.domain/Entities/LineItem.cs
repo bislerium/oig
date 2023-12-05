@@ -11,7 +11,7 @@
         {
             get
             {
-                return Quantity * Product.Price;
+                return Quantity * Product.Price.Value;
             }
         }
     }

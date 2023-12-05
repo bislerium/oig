@@ -1,5 +1,6 @@
 ﻿using Bogus;
 using oig.domain.Entities;
+using oig.domain.ValueTypes;
 
 namespace oig.domain.source.faker.Entities
 {
@@ -19,7 +20,7 @@ namespace oig.domain.source.faker.Entities
                 .RuleFor(x => x.Id, y => y.Random.AlphaNumeric(10).ToUpper())
                 .RuleFor(x => x.Name, y => y.Commerce.ProductName())
                 .RuleFor(x => x.Description, y => y.Commerce.ProductDescription())
-                .RuleFor(x => x.Price, y => decimal.Parse(y.Commerce.Price(MinPrice, MaxPrice)))
+                .RuleFor(x => x.Price, y => new Price(Config.CurrencySymbol, decimal.Parse(y.Commerce.Price(MinPrice, MaxPrice))))
                 .FinishWith((x, y) => x.ToString())
                 .UseSeed(Config.ProductFakerSeedValue);
         }

@@ -2,23 +2,23 @@
 using oig.pdf.Implementation;
 using QuestPDF.Fluent;
 using QuestPDF.Infrastructure;
-using QuestPDF.Previewer;
 using System.Diagnostics;
-using System.Reflection.Metadata;
 
 QuestPDF.Settings.License = LicenseType.Community;
 
-OrderFaker.LineItemCount = 45;
+OrderFaker.LineItemCount = 20;
 
 var invoice = InvoiceFaker.Generate();
 
-var directoryPath = @"C:\Users\bisha\Desktop";
+var directoryPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 var fileName = @"invoice.pdf";
+
 var fullPath = Path.Combine(directoryPath, fileName);
 
 InvoiceDocument doc = new(invoice);
 
-doc.ShowInPreviewer();
+// For Debug purpose
+//doc.ShowInPreviewer();
 
 doc.GeneratePdf(fullPath);
 

@@ -19,7 +19,6 @@ namespace oig.pdf.Components
             container.Column(column =>
             {
                 column.Spacing(2);
-                //column.Item().BorderBottom(1).PaddingBottom(5).Text(_title).SemiBold();
                 column.Item().AddSubTotal(_order.SubTotal);
                 column.Item().AddDiscount(_order.DiscountRate, _order.DiscountableAmount);
                 column.Item().AddTax(_order.TaxRate, _order.TaxableAmount);
