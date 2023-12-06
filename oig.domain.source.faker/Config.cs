@@ -3,9 +3,6 @@
     public static class Config
     {
         public static string Locale { get; set; }
-
-        public static string CurrencySymbol { get; set; }
-
         public static int CompanyFakerSeedValue { get; set; }
         public static int CustomerFakerSeedValue { get; set; }
         public static int InvoiceFakerSeedValue { get; set; }
@@ -16,11 +13,10 @@
         static Config()
         {
             Locale = "ne";
-            CurrencySymbol = "$";
             CompanyFakerSeedValue = 1312;
             CustomerFakerSeedValue = 3223;
             InvoiceFakerSeedValue = 6121;
-            OrderFakerSeedValue = 7331;
+            OrderFakerSeedValue = 1022;
             LineItemFakerSeedValue = 8433;
             ProductFakerSeedValue = 9432;
         }

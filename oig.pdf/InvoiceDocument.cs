@@ -4,7 +4,7 @@ using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 
-namespace oig.pdf.Implementation
+namespace oig.pdf
 {
     public class InvoiceDocument : IDocument
     {

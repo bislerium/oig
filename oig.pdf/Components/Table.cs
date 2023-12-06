@@ -180,9 +180,9 @@ namespace oig.pdf.Components
                 {
                     table.Cell().Element(CellStyle).Text((count++).ToString());
                     table.Cell().Element(CellStyle).Text(item.Product.Name);
-                    table.Cell().Element(CellStyle).AlignRight().Text($"{item.Product.Price.CurrencySymbol}{item.Product.Price.Value}");
+                    table.Cell().Element(CellStyle).AlignRight().Text($"{Config.CurrencySymbol}{item.Product.Price}");
                     table.Cell().Element(CellStyle).AlignRight().Text(item.Quantity.ToString());
-                    table.Cell().Element(CellStyle).AlignRight().Text($"{item.Product.Price.CurrencySymbol}{item.LineTotal}");
+                    table.Cell().Element(CellStyle).AlignRight().Text($"{Config.CurrencySymbol}{item.LineTotal}");
 
                     static IContainer CellStyle(IContainer container)
                     {

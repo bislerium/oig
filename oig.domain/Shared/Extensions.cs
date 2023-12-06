@@ -17,6 +17,11 @@ namespace oig.domain.Shared
             return GetLocalDateTime(invoice.InvoiceDueDateTimeUTCOffset, timeZoneID);
         }
 
+        public static DateTimeOffset GetLocalPODateTimeUTCOffset(this Invoice invoice, string timeZoneID = TIMEZONE_ID)
+        {
+            return GetLocalDateTime(invoice.PODate, timeZoneID);
+        }
+
         public static DateTimeOffset GetLocalOrderdDateTimeUTCOffset(this Order order, string timeZoneID = TIMEZONE_ID)
         {
             return GetLocalDateTime(order.OrderedDateTimeUTCOffset, timeZoneID);
